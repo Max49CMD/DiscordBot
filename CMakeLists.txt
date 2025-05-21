@@ -15,5 +15,5 @@ elseif (APPLE)
     #   Please be sure that you have installed dpp with brew
     #   https://dpp.dev/install-brew.html
     target_include_directories(DiscordCPPBot PRIVATE "/opt/homebrew/include")
-    target_link_libraries(DiscorCPPdBot PRIVATE "/opt/homebrew/lib/libdpp.dylib")
+    target_link_libraries(DiscordCPPBot PRIVATE "/opt/homebrew/lib/libdpp.dylib")
 endif()
