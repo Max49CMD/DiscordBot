@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(Project_DIR "${CMAKE_SOURCE_DIR}")
 
 add_executable(DiscordCPPBot
-        src/main.cpp)
+        src/main.cpp
+        src/bot.cpp
+        src/bot.hpp)
 
 if (WIN32)
     #   On Work
