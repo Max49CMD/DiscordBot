@@ -11,8 +11,6 @@ public:
 public:
     int initBot();
     void sendPong();
-    void sendEmbends();
-
 public:
     const std::string& get_Token() const;
 
