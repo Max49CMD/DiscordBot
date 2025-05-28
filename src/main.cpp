@@ -17,8 +17,8 @@ int main() {
 
     bot myBot(
         false,
-        "Test123",
-        0000);
+        1337,
+        "Test1337");
 
     myBot.init();
 

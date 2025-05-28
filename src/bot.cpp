@@ -1,8 +1,8 @@
 #include "bot.hpp"
 
 bot::bot(bool erase_CMD,
-         const std::string& Token,
-         uint64_t guild_id) : m_Token(Token), m_BOT(Token), m_Guild(guild_id) {}
+         uint64_t guild_id ,
+         const std::string& Token) : m_Erase_CMD(erase_CMD), m_Guild(guild_id), m_Token(Token), m_BOT(Token) {}
 
 int bot::init() {
     m_BOT.on_log(dpp::utility::cout_logger());
@@ -11,8 +11,8 @@ int bot::init() {
 
     m_BOT.on_ready([this](const dpp::ready_t& event) {
         if (dpp::run_once<struct register_bot_commands>()) {
-            dpp::slashcommand greetingCommand("hi", "Say hello", m_BOT.me.id);
-            dpp::slashcommand feelingCommand("feeling", "Check how the bot is feeling", m_BOT.me.id);
+            const dpp::slashcommand greetingCommand("hi", "Say hello", m_BOT.me.id);
+            const dpp::slashcommand feelingCommand("feeling", "Check how the bot is feeling", m_BOT.me.id);
 
             m_BOT.guild_command_create(greetingCommand, m_Guild);
             m_BOT.guild_command_create(feelingCommand, m_Guild);
