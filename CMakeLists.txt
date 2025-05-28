@@ -6,8 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(DiscordCPPBot
         src/main.cpp
-        src/bot.cpp
-        src/bot.hpp)
+        src/bot/bot.cpp
+        src/bot/bot.hpp
+        src/login/login.cpp
+        src/login/login.hpp)
 
 if (MSVC)
     # Please be sure that you are using the MSVC-Compiler
