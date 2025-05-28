@@ -3,18 +3,23 @@
 
 class bot {
 public:
-    bot(const std::string& bot_token);
+    bot(bool erase_CMD, const std::string& Token, uint64_t guild_id);
     ~bot() = default;
     bot(bot &&) = delete;
     bot(const bot&) = delete;
 
 public:
-    int initBot();
-    void sendPong();
+    int init();
+    void deleteAllCommands();
+    void sendMessage();
+
 public:
-    const std::string& get_Token() const;
+    uint64_t get_Guild_id() {return m_Guild;}
+    std::string& get_Token() {return m_Token;};
 
 private:
-    std::string m_BOT_TOKEN;
+    bool m_Erase_CMD;
+    uint64_t m_Guild;
+    std::string m_Token;
     dpp::cluster m_BOT;
 };
