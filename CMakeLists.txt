@@ -9,9 +9,10 @@ add_executable(DiscordCPPBot
         src/bot.cpp
         src/bot.hpp)
 
-if (WIN32)
+if (MSVC)
     # Please be sure that you are using the MSVC-Compiler
     # MingGW and MinGW-64 won't work since they are not supported
+    # Clang may work but is not officially tested or supported for this project.
     set(DLL_SOURCE_DIR "${CMAKE_SOURCE_DIR}/dependencies/Windows/bin")
     set(DLL_FILES
             "${DLL_SOURCE_DIR}/dpp.dll"
